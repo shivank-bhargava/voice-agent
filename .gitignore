@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Build artifacts
+build/
+dist/
+*.spec
+*.exe
+*.zip
+
+# Data files
+list_data.json
+user_learning.json
+agent-transcripts/
+
+# Vosk models (too large for git, users download separately)
+vosk-model-*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MCP
+mcps/
+terminals/
+canvases/
+
+# Large distribution files
+VoiceAgent-Installer.zip

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voice Grocery + Todo Agent</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Voice Grocery + Todo Agent</h1>
+      <p class="subtitle">Local mic + local AI extraction</p>
+
+      <section class="setup-status" id="setupSection" style="display: none;">
+        <h2>Setup Required</h2>
+        <div id="setupStatus"></div>
+        <button id="runSetupBtn">Run Setup Wizard</button>
+      </section>
+
+      <section class="controls">
+        <button id="startBtn">Start Listening</button>
+        <button id="stopBtn">Stop Listening</button>
+        <span id="status">Listening: false</span>
+        <span id="asrStatus">ASR: loading...</span>
+        <span id="ollamaStatus">Ollama: checking...</span>
+      </section>
+
+      <section class="manual-add">
+        <h2>Add Manually</h2>
+        <form id="addForm">
+          <input id="itemText" placeholder="e.g., buy oat milk" required />
+          <select id="listType">
+            <option value="grocery">Grocery</option>
+            <option value="todo">To-do</option>
+            <option value="auto">Auto (Ollama)</option>
+          </select>
+          <select id="priority">
+            <option value="1">Low Priority</option>
+            <option value="2">Medium Priority</option>
+            <option value="3">High Priority</option>
+          </select>
+          <button type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="lists">
+        <div>
+          <h2>
+            Grocery
+            <div class="sort-controls">
+              <select id="grocerySort" class="sort-select">
+                <option value="priority">Sort by Priority</option>
+                <option value="created_at">Sort by Date</option>
+                <option value="text">Sort by Name</option>
+              </select>
+            </div>
+          </h2>
+          <ul id="groceryList"></ul>
+        </div>
+        <div>
+          <h2>
+            To-do
+            <div class="sort-controls">
+              <select id="todoSort" class="sort-select">
+                <option value="priority">Sort by Priority</option>
+                <option value="created_at">Sort by Date</option>
+                <option value="text">Sort by Name</option>
+              </select>
+            </div>
+          </h2>
+          <ul id="todoList"></ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Live Transcript Log</h2>
+        <button id="clearTranscriptBtn">Clear Transcript</button>
+        <pre id="log"></pre>
+      </section>
+
+      <section>
+        <h2>Review Queue (Lower Confidence)</h2>
+        <div>
+          <label for="bulkPendingListType">Bulk target:</label>
+          <select id="bulkPendingListType">
+            <option value="grocery">Grocery</option>
+            <option value="todo">To-do</option>
+          </select>
+          <button id="confirmAllPendingBtn">Confirm All</button>
+        </div>
+        <button id="clearPendingBtn">Clear All Review Items</button>
+        <ul id="pendingList"></ul>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

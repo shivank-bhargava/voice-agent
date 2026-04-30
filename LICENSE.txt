@@ -1,0 +1,26 @@
+Voice Agent - License
+
+This software is provided as-is for personal and commercial use.
+
+Voice Agent is a local voice-powered grocery and to-do list manager that runs entirely on your machine.
+
+PRIVACY NOTICE:
+This application processes all data locally on your machine. No data is sent to cloud services.
+- Voice transcription happens locally using Vosk
+- AI inference happens locally using Ollama
+- All data is stored locally in JSON format
+
+THIRD-PARTY COMPONENTS:
+This application uses the following open-source components:
+- FastAPI - MIT License
+- Vosk - Apache 2.0 License
+- Ollama - MIT License
+- Various Python packages with compatible licenses
+
+DISCLAIMER:
+The software is provided "as is", without warranty of any kind, express or implied,
+including but not limited to the warranties of merchantability, fitness for a particular
+purpose and noninfringement.
+
+USAGE:
+You are free to use, modify, and distribute this software for any purpose.
