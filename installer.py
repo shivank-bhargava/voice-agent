@@ -283,14 +283,10 @@ class VoiceAgentInstaller:
             if not self.download_vosk_model(self.install_dir):
                 messagebox.showwarning("Warning", "Failed to download Vosk model. Voice recognition will not work. You can download it manually from https://alphacephei.com/vosk/models")
         
-        # Step 4: Pull Ollama model
+        # Step 4: Pull Ollama model (automatic)
         if self.ollama_installed:
-            response = messagebox.askyesno(
-                "AI Model",
-                "The Ollama AI model (llama3.1:8b) is required for AI features. Would you like to download it now? This may take several minutes."
-            )
-            if response:
-                self.pull_ollama_model()
+            self.log("Pulling Ollama AI model llama3.1:8b (this may take several minutes)...")
+            self.pull_ollama_model()
         
         self.log("="*60)
         self.log("Installation Complete!")

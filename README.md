@@ -22,7 +22,7 @@ A fully local voice-powered grocery and to-do list manager that runs entirely on
 3. Right-click `run_installer.bat` and select "Run as administrator"
 4. The installer will automatically:
    - ✅ Install Ollama (if not already installed)
-   - ✅ Download Vosk speech recognition model (~40MB)
+   - ✅ Download Vosk speech recognition model (~1.8GB)
    - ✅ Pull the required AI model llama3.1:8b (~4GB)
    - ✅ Install Voice Agent to Program Files
    - ✅ Create desktop and Start Menu shortcuts
@@ -47,6 +47,7 @@ A fully local voice-powered grocery and to-do list manager that runs entirely on
 - **Ollama**: Download from [ollama.com/download](https://ollama.com/download)
   - After installation, run: `ollama pull llama3.1:8b`
 - **Vosk Model**: The installer will automatically download the required speech recognition model (vosk-model-en-us-0.22, ~1.8GB)
+- **AI Model**: The installer will automatically pull llama3.1:8b (~4GB)
 
 ### Option 3: Build from Source
 
